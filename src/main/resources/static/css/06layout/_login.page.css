@@ -1,0 +1,24 @@
+.login-page {
+    background-color: var(--color-green-light);
+    color: var(--color-white);
+    height:100%;
+    min-height:100vh;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 5%;
+}
+.login-page--h1 {
+     font-family: var(--font-marker);
+     text-align:center;
+     }
+
+.login-page--form {
+    border: 5px solid var(--color-red-dark);
+    padding:2em;
+    display: block;
+    width: 60%;
+  }
+
+ .login-page--submit {
+ }

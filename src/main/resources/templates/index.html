@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+  <html lang="de" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:replace="~{fragments/head}"></head>
+  <body>
+
+    <div class="small-menu">
+        <p class="small-logo">WandelBar</p>
+      <div class="button">
+        <div class="ham-line"></div>
+        <div class="ham-line"></div>
+        <div class="ham-line"></div>
+      </div>
+
+
+    </div>
+    <div class="menu">
+      <a href="#aktuellWo" onclick="closeMenue()">Aktuelles Wochenangebot</a>
+      <a href="#neuigkeiten" onclick="closeMenue()">Neuigkeiten</a>
+      <a href="#ueberUns" onclick="closeMenue()">Über uns</a>
+      <a href="#angebot" onclick="closeMenue()">Unser Angebot</a>
+<!--      <a href="#galerie" onclick="closeMenue()">Galerie</a>-->
+      <a href="#kontakt" onclick="closeMenue()">Kontakt</a>
+      <a th:href="@{/login}" onclick="closeMenue()">Login</a>
+    </div>
+
+
+<div class="main-container">
+
+  <nav class="navigation">
+    <img src="../images/2x/logo.png" class="icon-logo" alt="LOGO">
+    <p class="logo">WandelBar</p>
+      <ul class="main-navigation" id="nav">
+        <li class="main-navi-list"> <a href="#aktuellWo">Aktuelles Wochenangebot</a></li>
+        <li class="main-navi-list"> <a href="#neuigkeiten">Neuigkeiten</a> </li>
+        <li class="main-navi-list"> <a href="#ueberUns">Über uns</a> </li>
+        <li class="main-navi-list"> <a href="#angebot">Unser Angebot</a> </li>
+<!--        <li class="main-navi-list"> <a href="#galerie">Galerie</a> </li>-->
+        <li class="main-navi-list"> <a href="#kontakt">Kontakt</a></li>
+        <li class="main-navi-list">
+          <th:block sec:authorize="!isAuthenticated()">
+            <a th:href="@{/login}">Login</a>
+          </th:block>
+          <th:block sec:authorize="isAuthenticated()">
+          <span>Account</span>
+          <ul>
+            <li>
+              Eingeloggt:
+              <p sec:authentication="name"></p>
+            </li>
+            <li>
+              <a th:href="@{/order}"> Bestellen</a>
+            </li>
+            <li>
+              <a th:href="@{/update}">Menue Bearbeiten</a>
+            </li>
+            <li>
+                <form th:method="POST" th:action="@{/logout}">
+                  <input type="submit" value="Logout">
+                </form>
+            </li>
+          </ul>
+      </th:block>
+        </li>
+      </ul>
+  </nav>
+  <div class="main-stoerer">
+    So isst<br> Schwerin!
+  </div>
+  <div class="container-willkommen-stoerer">
+    <img src="/images/2x/herz.png" alt="Herz">
+    <span>kochen in der Suppenstube!<br></span>
+  </div>
+  <span class="scroll"></span>
+</div>
+
+<div class="highlights-container">
+  <ul class="highlights-list">
+    <li class="highlights-element">
+      <img src="/images/2x/frisch.png" class="highlights-element-icons" alt="icon Frisch">
+      <span class="highlights-element-text">Frisch</span>
+    </li>
+    <li class="highlights-element">
+      <img src="/images/2x/VEGAN.png" class="highlights-element-icons" alt="icon Bio">
+      <span class="highlights-element-text">Vegan</span>
+    </li>
+    <li class="highlights-element">
+      <img src="/images/2x/freundlich.png" class="highlights-element-icons" alt="icon Freundlich">
+      <span class="highlights-element-text">Freundlich</span>
+    </li>
+    <li class="highlights-element">
+      <img src="/images/2x/smile.png" class="highlights-element-icons" alt="icon Smile">
+      <span class="highlights-element-text">Lecker</span>
+    </li>
+    <li class="highlights-element">
+      <img src="/images/2x/schnell.png" class="highlights-element-icons" alt="icon Schnell">
+      <span class="highlights-element-text">Schnell</span>
+    </li>
+    <li class="highlights-element">
+      <img src="/images/2x/nachhaltig.png" class="highlights-element-icons" alt="Icon Nachhaltig">
+      <span class="highlights-element-text">Nachhaltig</span>
+    </li>
+    <li class="highlights-element">
+      <img src="/images/2x/abwechslungsreich.png" class="highlights-element-icons" alt="icon Abwechslungsreich">
+      <span class="highlights-element-text">Abwechslungsreich</span>
+    </li>
+  </ul>
+</div>
+
+<div class="wochen-container" id="aktuellWo">
+  <h1>Unser Wochenangebot</h1>
+  <p>Woche 12. - 16.Dezember</p>
+  <p th:text = "${menu_item}"></p>
+  <div class="wochen-list">
+    <ul class="--left">
+      <li>
+        <img src="../images/2x/VEGAN.png" class="wochen-icons" alt="Icon Vegan" >
+      </li>
+    </ul>
+
+    <ul>
+      <li>
+        <img src="../images/2x/VEGAN.png" class="wochen-icons" alt="Icon Vegan" >
+      </li>
+    </ul>
+  </div>
+  <div class=" wochen-list">
+  <img src="../images/2x/VEGAN.png" class="wochen-icons" alt="Icon Vegan">
+  <p>=Vegan &nbsp; &nbsp;</p>
+  <img src="../images/2x/MEAT.png" class="wochen-icons" alt="Icon Fleisch">
+  <p>=Fleischgericht</p>
+  </div>
+</div>
+
+<div class="news-container" id="neuigkeiten">
+    <h1>Neuigkeiten</h1>
+  <div class="news-block">
+    <h2 class="news-text">Aus "Suppenstube" wurde "Bistro Wandel-Bar"</h2>
+    <p>
+      <b>An alle Menschen, die an der Wandlung und Verwandlung dieser Location interessiert sind.</b><br>
+      Hier im Hintergrund, weitestgehend noch unsichtbar, passiert gerade so Einiges.
+      Wir befinden uns inmitten einer großen Veränderung. <br>
+      Gern möchten wir euch auf diesem Weg mitnehmen, denn ihr seid es ja, die uns tragen und die die Suppenstube so groß werden ließen.
+      Nun, nach genau 15 Jahren, haben wir uns entschlossen, unsere Rechtsform zu ändern, den Namen dieses Unternehmens und auch unser Tätigkeitsfeld zu optimieren und es bald auch zu erweitern.<br>
+      Und so wandeln wir uns nun Schritt für Schritt in eine neue Zeit hinein.
+      <br>
+      Der 1.Schritt ist getan. Wir haben eine GbR gegründet und einen neuen Namen gewählt.<br><br>
+      Wird es weiterhin Suppen, Eintöpfe und Milchreis hier geben? JA und immer JA.<br>
+      Werden Christiane, Mathias und Franka auch weiterhin zusammen arbeiten? JA. <br>
+      Haben wir Verstärkung in unserem kleinen Team? JA. Liane bereichert uns alle seit September. <br>
+      <br>
+      Und zukünftig möchten wir unser gemeinsames Konzept erweitern und diesen Raum mit noch mehr Leben füllen: Kleine Kammerkonzerte, Kurse oder Lesungen, Verkostungen, kleine Geburtstagsfeiern, Gesprächsrunden usw. <br>
+      <br>
+      Das Wichtigste jedoch ist, dass dieser Raum in der Schloßstraße 29 auch weiterhin mit viel Liebe und Suppe gefüllt sein wird. <br>
+      Es bleibt also spannend und wandelbar.
+      <br><br>
+      Dankbarkeit für die Zeit der Suppenstube und Freude auf alles was nun dazu kommt, spüren wir täglich.
+      <br><br>
+      Lasst uns gemeinsam die neue Zeit einläuten.<br>
+      Christiane Groß & Mathias Schmidt
+    </p>
+    <h2 class="news-text">Mitnahmebehälter</h2>
+    <p>2019 ist noch jung und wir starten gleich mit guten Vorsätzen:
+      Ab sofort gibt's bei uns Mitnahmebehälter ohne Plastik, dafür 100% biologisch abbaubar und kompostierbar für 1,00 €.
+      Oder ihr bringt gleich eure eigenen Behältnisse mit.
+      Seid dabei! <br>
+      </p>
+  </div>
+</div>
+
+<div class="uns-container" id="ueberUns">
+  <div class="uns-stoerer">
+    <h1>Über uns</h1>
+  </div>
+<div class="uns-container-text">
+  <div class="uns-container__namen">
+    <h2>Christiane Groß <br> und Mathias Schmidt</h2>
+  </div>
+  <p>Unser kleines Familienunternehmen besteht seit Oktober 2006. <br>
+    Wir beide lieben Suppen, sind gern kreativ, freuen uns jedoch genauso über Rezepte unserer anspruchsvollen, treuen Kunden.  <br>
+    Viele Jahre kochen wir zwei gemeinsam, haben in der Zwischenzeit geheiratet, viele Freundschaften geschlossen und freuen uns täglich über all die vielen Stammgäste und „Neuzugänge".
+  </p>
+</div>
+</div>
+
+
+
+<div class="products-container" id="angebot">
+
+  <h1 class="title">Unser Angebot</h1>
+<form class="kontakt-formular form" action="../php/mailKontakt.php" method="post">
+    <span class="close">X</span>
+    <label for="herr" class="label">Herr</label>
+      <input type="radio" id="herr" name="herr">
+    <label for="frau" class="label">Frau</label>
+      <input type="radio" id="frau" name="frau">
+
+    <label class="label" for="Vorname"></label>
+    <input class="input" type="text" placeholder="Vorname*" name="Vorname" id="Vorname" required>
+    <label class="label" for="Nachname"></label>
+    <input class="input"  type="text" placeholder="Nachname*" name="Nachname" id="Nachname" required>
+    <label class="label" for="E_Mail"></label>
+    <input class="input"  type="email" placeholder="Email-Adresse*" name="Nachname" id="E_Mail" required>
+    <label class="label" for="Anfrage"></label>
+    <textarea class="input" placeholder="Was können wir für Sie machen?*" name="Anfrage" id="Anfrage" required></textarea>
+    <p>* Pflichtfelder!Bitte Ausfüllen!</p>
+
+    <button type="submit" class="list-button absende-button" name="button-absende">Absenden</button>
+
+</form>
+
+<div class="producs-container-border js-overlay">
+
+  <div class="product-container">
+    <div class="soups-container">
+    <img class="fotos" src="../images/soup.jpg" alt="Suppe">
+    <div class="product-text">
+      <h1>Hausgemachte Suppen & Salate</h1>
+      <p class="font">Täglich frisch gekocht, mindestens 8 verschiedene Suppen & Eintöpfe und 2-3 frische Salate der Saison, laktose- und glutenfrei.
+      </p>
+    </div>
+    </div>
+  </div>
+
+<div class="product-container">
+  <div class="coffee-container">
+    <div class="product-text">
+      <h1>Kaffee & Desserts</h1>
+      <p class="font">fritz, fritz, fritz... diverse Schorlen, Säfte und Limonaden..
+        frisch gemosteter Apfelsaft 
+        Eiskaffee, Eisschokolade und leckerer warmer Milchreis mit ZiZu..
+        Cafe, Latte und Espresso 
+      </p>
+    </div>
+    <img class="fotos" src="../images/coffee.jpg" alt="Kaffee">
+  </div>
+</div>
+
+  <div class="product-container">
+  <div class="res-container">
+    <img class="fotos" src="../images/ambiente.jpg" alt="Ambiente">
+    <div class="product-text">
+      <h1>Veranstaltungen</h1>
+      <p class="font">Stehen bei euch Geburtstage, Weihnachtsfeiern, Klassentreffen und andere Jubiläen an und ihr habt noch keinen Platz zum Feiern? Dann fragt doch einfach uns!  Wir bieten euch Platz für ca. 40 Personen, sind ein eingespieltes Team und machen jede Feier zum besonderen Ereignis!
+      </p>
+<!--      <button type="button" class="list-button  js-form " name="button"> Kontaktformular</button>-->
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div class="gallerie-container" id="galerie">
+<div class="galerie-modal">
+
+</div>
+
+<!--  <h1 class="title">Galerie</h1>
+  <div class="container">
+  <button type="button" onclick="openModal()" name="button"><img src="../images/localOut1_bearb.jpg" alt=""></button>
+  <button type="button" name="button">  <img src="../images/localOut1_bearb.jpg" alt=""></button>
+  <button type="button" name="button">  <img src="../images/SuppenstubeLOGO.jpg" alt=""></button>
+  <button type="button" name="button">  <img src="../images/Reservierung Kopie.jpg" alt=""></button>
+    <button type="button" name="button"><img src="../images/_DSC3499.jpg" alt=""></button>
+    <button type="button" name="button"><img src="../images/localOut1_bearb.jpg" alt=""></button>
+    <button type="button" name="button"><img src="../images/localOut_bearb.jpg" alt=""></button>
+    <img onclick="openModal()" src="../images/localOut1_bearb.jpg" alt="">
+</div>-->
+</div>
+
+
+
+
+
+
+
+
+  <div class="footer-element">
+  <div class="overlay-imp footer-overlay">
+    <span class="footer-info-button impressum-close">X</span>
+    <div class="footer-info-block impressum">
+      <p>
+        WandelBar <br>
+      Schloßstraße 29<br>
+      19055, Schwerin<br>
+      Inh.: Christiane Groß, Mathias Schmidt<br>
+      Tel.: 0172 / 38 250 38<br>
+      Mail: info@bistro-wandelbar.com<br>
+      Ust ID: DE137737100  </p>
+
+    </div>
+  </div>
+
+  <div class="overlay-dts footer-overlay">
+    <span class="datenschutz-close footer-info-button">X</span>
+    <div class="footer-info-block datenschutz">
+
+      <h2>Datenschutzerklärung</h2>
+    <p>Hinweise zur Datenverarbeitung im Zusammenhang mit Google Analytics
+  Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Ireland Limited. Wenn der Verantwortlicher für die Datenverarbeitung auf dieser Website außerhalb des Europäischen Wirtschaftsraumes oder der Schweiz sitzt, dann erfolgt die Google Analytics Datenverarbeitung durch Google LLC. Google LLC und Google Ireland Limited werden nachfolgend "Google" genannt.
+
+  Google Analytics verwendet sog. "Cookies", Textdateien, die auf dem Computer des Seitenbesuchers gespeichert werden und die eine Analyse der Benutzung der Website durch den Seitenbesucher ermöglichen. Die durch das Cookie erzeugten Informationen über die Benutzung dieser Website durch den Seitenbesucher (einschließlich der gekürzten IP-Adresse) werden in der Regel an einen Server von Google übertragen und dort gespeichert.
+
+  Google Analytics wird ausschließlich mit der Erweiterung "_anonymizeIp()" auf dieser Website verwendet. Diese Erweiterung stellt eine Anonymisierung der IP-Adresse durch Kürzung sicher und schließt eine direkte Personenbeziehbarkeit aus. Durch die Erweiterung wird die IP-Adresse von Google innerhalb von Mitgliedstaaten der Europäischen Union oder in anderen Vertragsstaaten des Abkommens über den Europäischen Wirtschaftsraum zuvor gekürzt. Nur in Ausnahmefällen wird die volle IP-Adresse an einen Server von Google in den USA übertragen und dort gekürzt. Die im Rahmen von Google Analytics von dem entsprechenden Browser übermittelte IP-Adresse wird nicht mit anderen Daten von Google zusammengeführt.
+
+  Im Auftrag des Seitenbetreibers wird Google die anfallenden Informationen benutzen, um die Nutzung der Website auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um weitere mit der Websitenutzung und der Internetnutzung verbundene Dienstleistungen dem Seitenbetreiber gegenüber zu erbringen (Art. 6 Abs. 1 lit. f DSGVO). Das berechtigte Interesse an der Datenverarbeitung liegt in der Optimierung dieser Website, der Analyse der Benutzung der Website und der Anpassung der Inhalte. Die Interessen der Nutzer werden durch die Pseudonymisierung hinreichend gewahrt.
+
+  Google LLC. ist nach dem sog. Privacy Shield zertifiziert (Listeneintrag hier) und gewährleistet auf dieser Basis ein angemessenes Datenschutzniveau. Die gesendeten und mit Cookies, Nutzerkennungen (z. B. User-ID) oder Werbe-IDs verknüpften Daten werden nach 50 Monaten automatisch gelöscht. Die Löschung von Daten, deren Aufbewahrungsdauer erreicht ist, erfolgt automatisch einmal im Monat.
+
+  Die Erfassung durch Google Analytics kann verhindert werden, indem der Seitenbesucher die Cookie-Einstellungen für diese Website anpasst. Der Erfassung und Speicherung der IP-Adresse und der durch Cookies erzeugten Daten kann außerdem jederzeit mit Wirkung für die Zukunft widersprochen werden. Das entsprechende Browser- Plugin kann unter dem folgenden Link heruntergeladen und installiert werden: https://tools.google.com/dlpage/gaoptout.
+
+  Der Seitenbesucher kann die Erfassung durch Google Analytics auf dieser Webseite verhindern, indem er auf folgenden Link klickt. Es wird ein Opt-Out-Cookie gesetzt, der die zukünftige Erfassung der Daten beim Besuch dieser Website verhindert.
+
+  Weitere Informationen zur Datennutzung durch Google, Einstellungs- und Widerspruchsmöglichkeiten, finden sich in der Datenschutzerklärung von Google (https://policies.google.com/privacy) sowie in den Einstellungen für die Darstellung von Werbeeinblendungen durch Google (https://adssettings.google.com/authenticated). </p>
+
+  </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+<div class="footer">
+
+ <div>
+  <img src="../images/2x/logo.png" class="footer-logo" alt="LOGO">
+  <p class="footer-text footer-text-logo">WandelBar</p>
+  <p class="footer-text">mail@bistro-wandelbar.com <br>
+    0123456789 <br> Schloßstraße 29 <br> 19053 Schwerin</p>
+</div>
+<div class="footer-right">
+  <h1>Montag bis Freitag von 11:00 bis ca. 16:00 Uhr</h1>
+  <p> <span style="font-size:1.2em"> Warum eigentlich circa?</span> <br>
+1. Wir sind flexibel. <br>
+2. Wir kochen täglich frisch und selbst. <br>
+3. Mal reichen unsere Suppen bis 16:00 Uhr, mal länger, je nachdem... <br>
+<br>
+Zu besonderen Anlässen öffnen wir samstags, sonntags und täglich nach Bedarf.</p>
+</div>
+</div>
+<div class="footer footer-links">
+
+  <button class="js-impressum button-text">Impressum</button>
+  <button class="padding-left-1em js-datenschutz button-text" >Datenschutz</button>
+</div>
+
+
+
+
+
+    <!-- SCRIPTS HERE -->
+  <script src="./js/Nav.js" ></script>
+  <script src="./js/Buttons.js" ></script>
+  <script src="./js/index.js" ></script>
+	  </body>
+</html>

@@ -1,0 +1,10 @@
+.u-font-family--marker {
+font-family: var(--font-marker);
+}
+.u-font-family--first {
+font-family: var(--font-first);
+}
+.u-font-color--white {
+color:white;
+
+}

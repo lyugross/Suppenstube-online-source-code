@@ -1,0 +1,238 @@
+.title{
+  color: black;
+  font-family:var(--font-marker);
+  margin-top: 4em;
+  padding:1em;
+  text-align: center;
+}
+
+.producs-container-border{
+  border: 5px solid var(--color-red-dark);
+  border-left: none;
+  margin: 1em 5em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.producs-container-border::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 5px;
+    height: 100%;
+    z-index: 2;
+    background-color: var(--color-red-dark);
+}
+
+.products-container{
+  position: relative;
+}
+
+.soups-container{
+  height: 15em;
+  width: 90%;
+  display: flex;
+  color:white;
+  font-family: var(--font-first);
+  margin-top: 3em;
+  margin-right: -2em;
+  float: right;
+
+}
+.coffee-container{
+  width: 100%;
+  height: 15em;
+  display: flex;
+  color:white;
+  font-family: var(--font-first);
+  margin-left:-1em;
+  margin-top: 2em;
+}
+
+.res-container{
+  display: flex;
+  width: 92%;
+  height: 19em;
+  color: white;
+  font-family: var(--font-first);
+  margin-top: 2em;
+  margin-bottom: 1em;
+  margin-right: -3em;
+  float: right;
+}
+
+.product-text{
+  background-color: var(--color-green-mittle);
+  flex-direction: column;
+  padding: 1em;
+  text-align: left;
+  width: 100%;
+}
+.product-text p{
+  font-family: var(--font-first);
+  font-weight: 200;
+  text-align: left;
+  margin-bottom: 1.2em;
+  margin-top: 0.6em;
+  padding-left: 1.5em;
+}
+
+.fotos{
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+}
+
+.list-button{
+  width: 9em;
+  height: 3em;
+  background: transparent;
+  border: 1.5px solid white;
+  color: white;
+  font-size: 1.2em;
+  outline: none;
+  cursor: pointer;
+  }
+
+  .list-button:hover{
+    background: rgba(255,255,255,0.4)
+  }
+
+  .absende-button{
+    margin-top: 3em;
+    border: 1.5px solid var(--color-green-mittle);
+    color: black;
+  }
+
+
+
+.kontakt-formular{
+  display: none;
+  position: absolute;
+  padding: 25px;
+  left: 50%;
+  top: 85%;
+  transform: translate(-50%,-50%);
+  width: 70%;
+  background-color:white;
+  border: 3px solid var(--color-red-dark);
+  color: black;
+  text-align: center;
+  font-family: var(--font-first);
+  line-height: 1.5;
+  z-index: 2;
+}
+.isVisible{
+  display: block;
+}
+.close{
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 10px;
+  float: right;
+  background-color: var(--color-red-dark);
+  color: white;
+}
+/* .overlay{
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  background-color: white;
+  height:100%;
+  z-index: 1;
+  transition: all 1s;
+} */
+
+.hasOpacity{
+  opacity: 0.3;
+  top: 0; bottom: 0;
+  left: 0; right: 0;
+  background-color: white;
+  height:100%;
+}
+.stop-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+.label{
+  margin: 0 10px;
+}
+.input{
+  outline: none;
+  display: block;
+  background: rgba(0,0,0, 0.1);
+  width: 100%;
+  border: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  color: #425363;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  transition: 0.3s ease;
+}
+
+#map {
+   width: 100%;
+   height: 300px;
+   background-color: grey;
+   border-top: 10px solid var(--color-red-dark);
+ }
+ @media only screen and (max-width: 1000px) {
+   .soups-container{
+     height: 17em;
+   }
+   .res-container{
+     width: 105%;
+   }
+    .product-text h1{
+      font-size: 1.7em;
+    }
+    .product-text p{
+      font-size: 0.9em;
+    }
+    .fotos{
+      max-width: 340px;
+    }
+    .list-button{
+      font-size: 0.8em;
+      }
+ }
+
+
+ @media only screen and (max-width: 755px) {
+    .soups-container{
+      flex-direction: column;
+      height: auto;
+      margin-top: 1em;
+    }
+    .coffee-container{
+      flex-direction: column;
+      height: auto;
+      margin-top: 1em;
+    }
+    .res-container{
+      flex-direction: column;
+      height: auto;
+      margin-top: 1em;
+    }
+    .product-text h1{
+      font-size: 1.5em;
+    }
+    .product-text p{
+      font-size: 0.7em;
+    }
+    .fotos{
+      max-width: 100%;
+      height: auto;
+    }
+    .producs-container-border{
+      margin: 1em 3em;
+    }
+ }

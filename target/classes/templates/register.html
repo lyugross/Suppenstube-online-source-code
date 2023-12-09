@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head}"></head>
+<body>
+<main class="login-page u-padding-top--5">
+    <h1 class="login-page--h1">Register</h1>
+
+    <form class="login-page--form" th:method="POST" th:action="@{register}">
+
+        <div class="">
+            <div class="">
+                <label for="username" class="u-font-family--first">Username</label>
+            </div>
+
+            <!--        Example: Render errors messages with th:errorclass "is-invalid" and class "invalid-feedback" - you can make it differently. -->
+            <!--        <input th:field="*{username}" th:errorclass=""'is-invalid alert-danger'" type="text" class=""form-control"-->
+            <!--               id="username" name="username"/>-->
+            <!--        <small class=""invalid-feedback text-danger">Username error message</small>-->
+
+            <input type="text" class="input u-font-color--white"  id="username" name="userName"/>
+            <small class="">Username error message</small>
+        </div>
+
+        <div class="">
+            <div class="">
+                <label for="email" class="u-font-family--first">Email</label>
+            </div>
+            <input type="email" class="input u-font-color--white"  id="email" name="email"/>
+            <small class="text-danger">Email error message</small>
+        </div>
+
+        <div class="">
+            <div class="">
+                <label for="firstname" class="u-font-family--first">Firstname</label>
+            </div>
+            <input type="text" class="input u-font-color--white"  id="firstname" name="firstName"/>
+            <small class="text-danger">firstname error message</small>
+        </div>
+
+        <div class="">
+            <div class="">
+                <label for="lastname" class="u-font-family--first">Lastname</label>
+            </div>
+            <input type="text" class="input u-font-color--white"  id="lastname" name="lastName"/>
+            <small class="text-danger">lastname error message</small>
+        </div>
+
+        <div class="">
+            <div class="">
+                <label for="phoneNumber" class="u-font-family--first">Phone number</label>
+            </div>
+            <input type="number" class="input u-font-color--white"  id="phoneNumber" name="phoneNumber"/>
+            <small class="text-danger">phone number error message</small>
+        </div>
+
+        <div class="">
+            <div class="">
+                <label for="password" class="u-font-family--first">Password</label>
+            </div>
+            <input type="password" class="input u-font-color--white"  id="password" name="password"/>
+            <small class="text-danger">Password error message</small>
+        </div>
+
+        <div class="">
+            <div class="">
+                <label for="confirmPassword" class="u-font-family--first">Confirm Password</label>
+            </div>
+            <input type="password" class="input u-font-color--white"  id="confirmPassword" name="confirmPassword"/>
+            <small class="text-danger">Password error message</small>
+        </div>
+
+        <div class="u-margin-top--5">
+            <button type="submit" class="list-button u-font-family--first" value="Register" data-callback="onSubmit"
+                    data-action="submit">Register</button>
+        </div>
+
+    </form>
+</main>
+</body>
+</html>

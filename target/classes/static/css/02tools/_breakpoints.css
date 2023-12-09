@@ -1,0 +1,53 @@
+@mixin breakpoint($point) {
+  @if $point == xs {
+    @media all and (min-width: 320px) {
+      @content;
+    }
+  } @else if $point == s {
+    @media all and (min-width: 568px) {
+      @content;
+    }
+  } @else if $point == max-s {
+    @media all and (max-width: 567px) {
+      @content;
+    }
+  } @else if $point == s640 {
+    @media all and (min-width: 640px) {
+      @content;
+    }
+  } @else if $point == max-s640 {
+    @media all and (max-width: 639px) {
+      @content;
+    }
+  } @else if $point == max-m {
+    @media all and (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == m {
+    @media all and (min-width: 768px) {
+      @content;
+    }
+  } @else if $point == l {
+    @media all and (min-width: 1040px) {
+      @content;
+    }
+  } @else if $point == max-l {
+    @media all and (max-width: 1039px) {
+      @content;
+    }
+  }  @else if $point == xl {
+    @media all and (min-width: 1480px) {
+      @content;
+    }
+  } @else if $point == mobileonly {
+    @media all and (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == 320-567 {
+    @media all and (max-width: 567px) {
+      @content;
+    }
+  } @else {
+    @error "invalid parameter: '#{$point}'.";
+  }
+}

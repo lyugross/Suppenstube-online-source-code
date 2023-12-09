@@ -1,0 +1,34 @@
+.wochen-container{
+  background-image: url("../../images/black-board.jpg");
+  background-size: auto 100%;
+  color: white;
+  font-family:var(--font-first);
+  font-weight: lighter;
+  padding:3rem;
+  text-align: center;
+  /* filter: grayscale(100%); */
+}
+.wochen-container ul{
+  padding: 2rem;
+  border-top: 3px solid white;
+}
+
+.wochen-list{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  font-family:var(--font-first);
+  padding: 2rem 0;
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: 200;
+  text-align: left;
+}
+.--left{
+  text-align: right;
+  border-right: 3px solid white;
+}
+.wochen-icons{
+  width: 1em;
+  height: 1em;
+}

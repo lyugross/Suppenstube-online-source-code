@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{fragments/head}"></head>
+<body>
+<div class="login-page u-padding-top--5">
+    <h1 class="login-page--h1">Update Wochenmenü</h1>
+    <form th:method="POST"
+          th:action="@{/update}"
+          class="login-page--form">
+        <div class="">
+            <ul>
+                <li  th:each="item: ${menuItems}"
+                     th:object="${item}">
+                    <input type="text" name="name" th:value="${item.name}" class="input u-font-color--white u-margin-top--5">
+                    <input type="text" name="price" th:value="${item.price}" class="input u-font-color--white u-margin-top--2">
+                    <div >
+                        <label for="label" class="label u-font-family--first">Wähle ein Label</label>
+                        <select
+                                id="label"
+                        >
+
+                            <option value="">- Select label -</option>
+                            <option th:each="t : ${T(com.suppenstube.model.entity.enums.SoupLabels).values()}"
+                                    th:text="${t}"
+                                    th:value="${t}"
+                                    th:name="${t}"
+                                    th:selected="${t} == ${item.label}"
+                                    class="input u-font-color--white u-margin-top--2">
+                            </option>
+                        </select>
+                    </div>
+                </li>
+            </ul>
+            <div class="">
+                <input  class="list-button u-font-family--first u-margin-top--5" value="Speichern" type="submit">
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>

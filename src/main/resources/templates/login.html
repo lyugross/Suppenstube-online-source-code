@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head}">
+</head>
+<body>
+<main class="login-page u-padding-top--5">
+        <h1 class="login-page--h1">Login</h1>
+        <form class="login-page--form" th:action="@{/login}" th:method="POST">
+
+            <!--    Example: Render errors messages with fields.errors - you can make it differently. -->
+            <!--    <div th:each="error: ${#fields.errors()}" th:text="${error}" class="text-danger">Error messages</div>-->
+
+            <div class="text-danger">Error messages</div>
+            <div class="text-danger">Incorrect username or password!</div>
+
+            <div class="u-margin-top--5">
+                <label for="userName" class="label u-font-family--first">Username</label>
+                <input id="userName" type="text" class="input u-font-color--white" name="userName"/>
+            </div>
+
+            <div class="u-margin-top--5">
+                <label for="password" class="label u-font-family--first">Passwort</label>
+                <input id="password" type="password" class="input u-font-color--white" name="password"/>
+            </div>
+
+
+            <div class="u-margin-top--2">
+                <p>Neuen Account können Sie hier Erstellen:
+                    <a class="u-font-family--marker" th:href="@{/register}">Registrieren</a>
+                </p>
+            </div>
+
+            <div class="u-margin-top--5">
+                <button type="submit" class="list-button u-font-family--first">Login</button>
+            </div>
+
+
+        </form>
+
+
+</main>
+</body>
+</html>

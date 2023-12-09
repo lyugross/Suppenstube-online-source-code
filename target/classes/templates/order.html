@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{fragments/head}"></head>
+<body>
+<div class="login-page u-padding-top--5 ">
+    <h1 class="login-page--h1">Bestellen</h1>
+    <form th:method="POST"
+          th:action="@{/order}"
+          class="u-font-family--first">
+        <div class="">
+            <ul>
+                <li  th:each="item: ${menuItems}"
+                     th:object="${OrderDTO}">
+                    <img th:src="@{'/images/2x/'+${item.label}+'.png'}"
+                         class="wochen-icons" alt="item.label" >
+                    <p th:text="${item.name}"  name="name"></p>
+                    <p name="price" th:text="${item.price} + '€'"></p>
+
+                    <select id="amount"
+                            th:name="amountId">
+                        <option value="">- Menge -</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                    </select>
+                </li>
+            </ul>
+            <textarea rows="3"
+                      placeholder="Nachricht" name="message"></textarea>
+            <div class="">
+                <input class="" value="Bestellen" type="submit">
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>
