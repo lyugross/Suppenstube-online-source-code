@@ -1,2 +1,8 @@
-/Users/lyubomirats/Downloads/softuni-sep-2023-main/Suppenstube-online-source-code/src/test/java/com/suppenstube/WandelbarApplicationTest.java
+/Users/lyubomirats/Downloads/softuni-sep-2023-main/Suppenstube-online-source-code/src/test/java/com/suppenstube/model/entity/UserTest.java
 /Users/lyubomirats/Downloads/softuni-sep-2023-main/Suppenstube-online-source-code/src/test/java/com/suppenstube/service/impl/MenuItemsImplTest.java
+/Users/lyubomirats/Downloads/softuni-sep-2023-main/Suppenstube-online-source-code/src/test/java/com/suppenstube/WandelbarApplicationTests.java
+/Users/lyubomirats/Downloads/softuni-sep-2023-main/Suppenstube-online-source-code/src/test/java/com/suppenstube/controller/OrderControllerTest.java
+/Users/lyubomirats/Downloads/softuni-sep-2023-main/Suppenstube-online-source-code/src/test/java/com/suppenstube/controller/MenuItemControllerTest.java
+/Users/lyubomirats/Downloads/softuni-sep-2023-main/Suppenstube-online-source-code/src/test/java/com/suppenstube/controller/UserRegisterControllerTest.java
+/Users/lyubomirats/Downloads/softuni-sep-2023-main/Suppenstube-online-source-code/src/test/java/com/suppenstube/model/entity/NewsTest.java
+/Users/lyubomirats/Downloads/softuni-sep-2023-main/Suppenstube-online-source-code/src/test/java/com/suppenstube/model/entity/MenuItemTest.java

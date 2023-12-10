@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head}"></head>
+<body>
+<div class="login-page u-padding-top--5">
+    <h1 class="login-page--h1">Update die aktuellen News</h1>
+    <form th:method="POST"
+          th:action="@{/update-news}"
+          class="login-page--form">
+        <div class="">
+            <ul>
+                <li  th:each="new: ${news}"
+                     th:object="${new}">
+                    <input type="text" th:name="headline" th:value="${new.headline}" class="input u-font-color--white u-margin-top--5">
+                    <textarea  th:name="headline" rows="5" th:value="${new.text}" class="input u-font-color--white u-margin-top--2"></textarea>
+                    <form th:method="DELETE"
+                          th:action="@{'/update-news/'+${new.id}}">
+                        <input  class="list-button u-font-family--first u-margin-top--5" value="Löschen" type="submit">
+                    </form>
+
+                </li>
+                <li>
+                    <input type="text" name="headline" th:value="Titel eingeben" class="input u-font-color--white u-margin-top--5">
+                    <textarea name="headline" rows="5" th:value="Text eingeben" class="input u-font-color--white u-margin-top--2"></textarea>
+                </li>
+            </ul>
+            <div class="">
+                <input  class="list-button u-font-family--first u-margin-top--5" value="Speichern" type="submit">
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>

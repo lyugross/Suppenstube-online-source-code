@@ -1,0 +1,12 @@
+
+<div class="news-container" id="neuigkeiten">
+    <h1>Neuigkeiten</h1>
+    <div class="news-block">
+        <div
+                th:each="item: ${news}"
+                th:object="${item}">
+            <h2 class="news-text" th:text="${item.headline}"></h2>
+            <p th:text="${item.text}"></p>
+        </div>
+    </div>
+</div>

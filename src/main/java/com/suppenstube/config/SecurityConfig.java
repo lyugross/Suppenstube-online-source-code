@@ -28,7 +28,7 @@ public class SecurityConfig {
                            .usernameParameter("userName")
                            .passwordParameter("password")
                            .defaultSuccessUrl("/")
-                           .failureForwardUrl("/login-error");
+                           .failureForwardUrl("/");
                }
        );
 

@@ -2,11 +2,13 @@ com/suppenstube/model/entity/Image.class
 com/suppenstube/service/ContentService.class
 com/suppenstube/WandelbarApplication.class
 com/suppenstube/repo/ImageRepository.class
+com/suppenstube/model/dto/NewsDTO.class
 com/suppenstube/model/entity/BaseEntity.class
 com/suppenstube/service/impl/MenuItemsImpl.class
 com/suppenstube/model/dto/MenuDTO.class
 com/suppenstube/service/impl/UserDetailService.class
 com/suppenstube/model/dto/UserRegisterDTO.class
+com/suppenstube/service/impl/NewsServiceImpl.class
 com/suppenstube/model/entity/UserRole.class
 com/suppenstube/controller/OrderController.class
 com/suppenstube/service/OrderService.class
@@ -14,6 +16,8 @@ com/suppenstube/config/SecurityConfig.class
 com/suppenstube/model/entity/BasicContent.class
 com/suppenstube/model/entity/Order.class
 com/suppenstube/model/validation/FieldMatch.class
+com/suppenstube/repo/NewsRepository.class
+com/suppenstube/controller/NewsController.class
 com/suppenstube/controller/UserRegisterController.class
 com/suppenstube/service/UserService.class
 com/suppenstube/service/impl/UserServiceImpl.class
@@ -23,6 +27,7 @@ com/suppenstube/service/MenuItemsService.class
 com/suppenstube/repo/UserRepository.class
 com/suppenstube/model/validation/UniqueUserEmailValidator.class
 com/suppenstube/controller/UserLoginController.class
+com/suppenstube/service/NewsService.class
 com/suppenstube/repo/OrderRepository.class
 com/suppenstube/model/entity/enums/UserRoleEnum.class
 com/suppenstube/controller/MenuItemController.class
@@ -35,3 +40,4 @@ com/suppenstube/config/AppConfig.class
 com/suppenstube/repo/UserRoleRepository.class
 com/suppenstube/model/entity/User.class
 com/suppenstube/model/entity/enums/SoupLabels.class
+com/suppenstube/model/entity/News.class

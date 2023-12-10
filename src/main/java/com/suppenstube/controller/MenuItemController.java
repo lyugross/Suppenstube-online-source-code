@@ -24,6 +24,7 @@ public class MenuItemController {
         return "change-menu";
     }
 
+
     @PostMapping("/update")
     public String updateMenu(@RequestBody List<MenuDTO> menuDTO) {
         menuItemsService.deleteMenuItems();

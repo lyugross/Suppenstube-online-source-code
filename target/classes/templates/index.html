@@ -55,6 +55,9 @@
               <a th:href="@{/update}">Menue Bearbeiten</a>
             </li>
             <li>
+              <a th:href="@{/update-news}">News Bearbeiten</a>
+            </li>
+            <li>
                 <form th:method="POST" th:action="@{/logout}">
                   <input type="submit" value="Logout">
                 </form>
@@ -107,66 +110,13 @@
   </ul>
 </div>
 
-<div class="wochen-container" id="aktuellWo">
-  <h1>Unser Wochenangebot</h1>
-  <p>Woche 12. - 16.Dezember</p>
-  <p th:text = "${menu_item}"></p>
-  <div class="wochen-list">
-    <ul class="--left">
-      <li>
-        <img src="../images/2x/VEGAN.png" class="wochen-icons" alt="Icon Vegan" >
-      </li>
-    </ul>
 
-    <ul>
-      <li>
-        <img src="../images/2x/VEGAN.png" class="wochen-icons" alt="Icon Vegan" >
-      </li>
-    </ul>
-  </div>
-  <div class=" wochen-list">
-  <img src="../images/2x/VEGAN.png" class="wochen-icons" alt="Icon Vegan">
-  <p>=Vegan &nbsp; &nbsp;</p>
-  <img src="../images/2x/MEAT.png" class="wochen-icons" alt="Icon Fleisch">
-  <p>=Fleischgericht</p>
-  </div>
-</div>
 
-<div class="news-container" id="neuigkeiten">
-    <h1>Neuigkeiten</h1>
-  <div class="news-block">
-    <h2 class="news-text">Aus "Suppenstube" wurde "Bistro Wandel-Bar"</h2>
-    <p>
-      <b>An alle Menschen, die an der Wandlung und Verwandlung dieser Location interessiert sind.</b><br>
-      Hier im Hintergrund, weitestgehend noch unsichtbar, passiert gerade so Einiges.
-      Wir befinden uns inmitten einer großen Veränderung. <br>
-      Gern möchten wir euch auf diesem Weg mitnehmen, denn ihr seid es ja, die uns tragen und die die Suppenstube so groß werden ließen.
-      Nun, nach genau 15 Jahren, haben wir uns entschlossen, unsere Rechtsform zu ändern, den Namen dieses Unternehmens und auch unser Tätigkeitsfeld zu optimieren und es bald auch zu erweitern.<br>
-      Und so wandeln wir uns nun Schritt für Schritt in eine neue Zeit hinein.
-      <br>
-      Der 1.Schritt ist getan. Wir haben eine GbR gegründet und einen neuen Namen gewählt.<br><br>
-      Wird es weiterhin Suppen, Eintöpfe und Milchreis hier geben? JA und immer JA.<br>
-      Werden Christiane, Mathias und Franka auch weiterhin zusammen arbeiten? JA. <br>
-      Haben wir Verstärkung in unserem kleinen Team? JA. Liane bereichert uns alle seit September. <br>
-      <br>
-      Und zukünftig möchten wir unser gemeinsames Konzept erweitern und diesen Raum mit noch mehr Leben füllen: Kleine Kammerkonzerte, Kurse oder Lesungen, Verkostungen, kleine Geburtstagsfeiern, Gesprächsrunden usw. <br>
-      <br>
-      Das Wichtigste jedoch ist, dass dieser Raum in der Schloßstraße 29 auch weiterhin mit viel Liebe und Suppe gefüllt sein wird. <br>
-      Es bleibt also spannend und wandelbar.
-      <br><br>
-      Dankbarkeit für die Zeit der Suppenstube und Freude auf alles was nun dazu kommt, spüren wir täglich.
-      <br><br>
-      Lasst uns gemeinsam die neue Zeit einläuten.<br>
-      Christiane Groß & Mathias Schmidt
-    </p>
-    <h2 class="news-text">Mitnahmebehälter</h2>
-    <p>2019 ist noch jung und wir starten gleich mit guten Vorsätzen:
-      Ab sofort gibt's bei uns Mitnahmebehälter ohne Plastik, dafür 100% biologisch abbaubar und kompostierbar für 1,00 €.
-      Oder ihr bringt gleich eure eigenen Behältnisse mit.
-      Seid dabei! <br>
-      </p>
-  </div>
-</div>
+
+<div th:replace="~{menu}"></div>
+
+<div th:replace="~{news}"></div>
+
 
 <div class="uns-container" id="ueberUns">
   <div class="uns-stoerer">
@@ -256,7 +206,7 @@
 
 </div>
 
-<!--  <h1 class="title">Galerie</h1>
+<!-- <h2 class="title">Galerie</h2>
   <div class="container">
   <button type="button" onclick="openModal()" name="button"><img src="../images/localOut1_bearb.jpg" alt=""></button>
   <button type="button" name="button">  <img src="../images/localOut1_bearb.jpg" alt=""></button>
@@ -265,7 +215,7 @@
     <button type="button" name="button"><img src="../images/_DSC3499.jpg" alt=""></button>
     <button type="button" name="button"><img src="../images/localOut1_bearb.jpg" alt=""></button>
     <button type="button" name="button"><img src="../images/localOut_bearb.jpg" alt=""></button>
-    <img onclick="openModal()" src="../images/localOut1_bearb.jpg" alt="">
+    <img onclick="openModal()" src="../images/localOut1_bearb.jpg" alt=""/>
 </div>-->
 </div>
 

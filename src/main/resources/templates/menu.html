@@ -1,0 +1,26 @@
+<div class="wochen-container" id="aktuellWo">
+    <h1>Unser Wochenangebot</h1>
+    <p>Woche 12. - 16.Dezember</p>
+    <div class="wochen-list">
+        <ul class="--left">
+            <li th:each="item: ${menuItems}"
+                th:object="${item}">
+                <p th:value="${item.name}"></p>
+                <img th:src="@{'/images/2x/'+${item.label}+'.png'}"
+                     class="wochen-icons" alt="item.label" >
+            </li>
+        </ul>
+
+        <ul>
+            <li>
+                <img src="../images/2x/VEGAN.png" class="wochen-icons" alt="Icon Vegan" >
+            </li>
+        </ul>
+    </div>
+    <div class=" wochen-list">
+        <img src="../images/2x/VEGAN.png" class="wochen-icons" alt="Icon Vegan">
+        <p>=Vegan &nbsp; &nbsp;</p>
+        <img src="../images/2x/MEAT.png" class="wochen-icons" alt="Icon Fleisch">
+        <p>=Fleischgericht</p>
+    </div>
+</div>

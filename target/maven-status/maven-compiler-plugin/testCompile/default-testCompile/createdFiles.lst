@@ -1,2 +1,8 @@
+com/suppenstube/WandelbarApplicationTests.class
+com/suppenstube/model/entity/MenuItemTest.class
+com/suppenstube/model/entity/UserTest.class
 com/suppenstube/service/impl/MenuItemsImplTest.class
-com/suppenstube/WandelbarApplicationTest.class
+com/suppenstube/controller/UserRegisterControllerTest.class
+com/suppenstube/controller/MenuItemControllerTest.class
+com/suppenstube/controller/OrderControllerTest.class
+com/suppenstube/model/entity/NewsTest.class
